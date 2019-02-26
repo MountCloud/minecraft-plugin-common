@@ -1,0 +1,4 @@
+name: PluginCommon
+main: org.mountcloud.mcplugin.prefix.PrefixPluginMain
+version: 1.0
+load: startup
