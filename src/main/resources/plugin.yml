@@ -1,4 +1,9 @@
-name: PluginCommon
-main: org.mountcloud.mcplugin.prefix.PrefixPluginMain
+name: McPluginCommon
+authors: [MountCloud]
+website: http://www.mountcloud.org
+description: MountCloudMcPluginCommon is a framework for rapid development of server plugins
+
+main: org.mountcloud.mcplugin.common.McCommonPlugin
 version: 1.0
+
 load: startup
