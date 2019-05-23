@@ -7,11 +7,37 @@
     <version>1.13-R0.1-SNAPSHOT-v1.0</version>
     <packaging>jar</packaging>
 
-    <name>common</name>
-    <url>http://maven.apache.org</url>
+    <!-- 声明license -->
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <!-- 项目地址 -->
+    <url>https://github.com/MountCloud/minecraft-plugin-common</url>
+
+    <!-- 开发者信息 -->
+    <developers>
+        <developer>
+            <name>mountcloud</name>
+            <email>moutcloud@outlook.com</email>
+        </developer>
+    </developers>
+
+    <!-- “采购”信息，主要是自己项目的git仓库 -->
+    <scm>
+        <connection>scm:git:git@github.com:MountCloud/minecraft-plugin-common.git</connection>
+        <developerConnection>scm:git:git@github.com:MountCloud/minecraft-plugin-common.git</developerConnection>
+        <url>git@github.com:MountCloud/minecraft-plugin-common.git</url>
+    </scm>
+
+    <name>${project.groupId}:${project.artifactId}</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <devServerPluginPath>E:/game/mc/server/devServer13/plugins</devServerPluginPath>
     </properties>
 
@@ -46,6 +72,69 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <!-- 其他介绍 -->
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <!-- Source -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.2.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Javadoc -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- GPG -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>mountoss</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>mountoss</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
