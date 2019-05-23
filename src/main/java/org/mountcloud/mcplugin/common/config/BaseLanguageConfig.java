@@ -11,6 +11,10 @@ public class BaseLanguageConfig extends BaseConfig {
 	
 	public static String configName = "lang.yml";
 
+	/**
+	 * 构造函数
+	 * @param basePlugin 插件
+	 */
 	public BaseLanguageConfig(BasePlugin basePlugin) {
 		super(BaseLanguageConfig.configName,basePlugin);
 	}

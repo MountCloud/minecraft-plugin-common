@@ -17,7 +17,11 @@ public class BaseConfigService {
 	private Map<String,BaseConfig> configs = new HashMap<String,BaseConfig>();
 	
 	protected BasePlugin basePlugin;
-	
+
+	/**
+	 * 构造函数
+	 * @param plugin 插件
+	 */
 	public BaseConfigService(BasePlugin plugin) {
 		this.basePlugin = plugin;
 	}
@@ -25,6 +29,7 @@ public class BaseConfigService {
 	/**
 	 * 将配置注册进来
 	 * @param config 配置
+	 * @param <T> 配置文件
 	 */
 	public <T extends BaseConfig> void registerConfig(T config) {
 		if(config.isInit()) {
@@ -37,7 +42,7 @@ public class BaseConfigService {
 
 	/**
 	 * 重新加载某个config
-	 * @param configName 文件名
+	 * @param configFileName 文件名
 	 */
 	public void reloadConfig(String configFileName) {
 		BaseConfig tempconfig = configs.get(configFileName);
@@ -57,6 +62,7 @@ public class BaseConfigService {
 	/**
 	 * 提供注册的配置
 	 * @param configFileName 配置文件的filename
+	 * @param <T> 配置文件
 	 */
 	@SuppressWarnings("unchecked")
 	public <T extends BaseConfig> T getConfig(String configFileName){

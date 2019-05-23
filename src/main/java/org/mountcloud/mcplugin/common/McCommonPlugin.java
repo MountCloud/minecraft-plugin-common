@@ -9,15 +9,10 @@ import org.mountcloud.mcplugin.common.service.log.BaseLogService;
  */
 public class McCommonPlugin extends BasePlugin {
 
-    private BaseLogService baseLogService;
-
-    public McCommonPlugin(){
-        baseLogService = new BaseLogService(this);
-    }
-
     @Override
     public boolean enable() {
-        baseLogService.info("install mount cloud plugin common success!!!");
+        getBaseLogService().info("Load McPluginCommon Success.");
+        getBaseLogService().info("Go to http://www.mountcloud.org for more plug-in information.");
         return true;
     }
 }

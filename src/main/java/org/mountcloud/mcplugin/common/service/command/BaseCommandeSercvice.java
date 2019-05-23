@@ -37,7 +37,12 @@ public abstract class BaseCommandeSercvice implements CommandExecutor{
 	 * 默认执行命令
 	 */
 	private BaseCommand defualtCommand = null;
-	
+
+	/**
+	 * 构造函数
+	 * @param execCommand 命令名字
+	 * @param plugin 插件
+	 */
 	public BaseCommandeSercvice(String execCommand,BasePlugin plugin) {
 		this.basePlugin = plugin;
 		this.exeCommand = execCommand;
@@ -177,6 +182,7 @@ public abstract class BaseCommandeSercvice implements CommandExecutor{
      * @param sender 发送命令的对象
      * @param command 被执行的指令
      * @param args 该指令的自变量数组
+	 * @param commandSenderType 命令发送者
 	 * @return 如果返回值是true，你不会看到什么明显的事情发生，但如果返回值是false，则会返回你的plugin.yml里的'usage:property'然后发送给命令使用者. 
 	 */
 	public abstract boolean execCommand(CommandSender sender,BaseCommand command,String[] args,BaseCommandSenderType commandSenderType);
@@ -194,6 +200,7 @@ public abstract class BaseCommandeSercvice implements CommandExecutor{
 	 * 注册命令
 	 * @param commandStr 子命令名称
 	 * @param commandBean 命令的实体
+	 * @param <T> 命令
 	 */
 	public <T extends BaseCommand> void registerCommand(String commandStr,T commandBean) {
 		commands.put(commandStr, commandBean);
@@ -204,6 +211,7 @@ public abstract class BaseCommandeSercvice implements CommandExecutor{
 	/**
 	 * 将命令注册进来
 	 * @param command 命令
+	 * @param <T> 命令
 	 */
 	public <T extends BaseCommand> void registerCommand(T command) {
 		registerCommand(command.getCommand(),command);
@@ -211,7 +219,8 @@ public abstract class BaseCommandeSercvice implements CommandExecutor{
 	
 	/**
 	 * 提供注册的命令
-	 * @param commandFileName 命令文件的filename
+	 * @param commandName 命令名字
+	 * @param <T> 命令
 	 */
 	@SuppressWarnings("unchecked")
 	public <T extends BaseCommand> T getCommand(String commandName){
@@ -241,7 +250,7 @@ public abstract class BaseCommandeSercvice implements CommandExecutor{
 	
 	/**
 	 * 返回默认命令
-	 * @return
+	 * @return 命令
 	 */
 	public BaseCommand getDefualtCommand() {
 		return defualtCommand;
@@ -265,8 +274,8 @@ public abstract class BaseCommandeSercvice implements CommandExecutor{
 	
 	/**
 	 * 返回子参数的名字
-	 * @param args
-	 * @return
+	 * @param args 参数
+	 * @return 子参数名字
 	 */
 	public String getCommandName(String[] args) {
 		if(args.length<1) {

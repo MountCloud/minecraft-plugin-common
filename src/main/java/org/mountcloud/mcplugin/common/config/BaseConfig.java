@@ -24,7 +24,8 @@ public abstract class BaseConfig {
 
 	/**
 	  * 构造函数
-	 * @param fileName
+	 * @param fileName 文件名
+	 * @param plugin 插件
 	 */
 	public BaseConfig(String fileName,BasePlugin plugin) {
 		this.fileName = fileName;
@@ -71,8 +72,7 @@ public abstract class BaseConfig {
 	}
 	
 	/**
-	 * 设置配置文件
-	 * @param configuration
+	 * 创建一个新的配置文件
 	 */
 	protected boolean createNewConfigFile() {
 		boolean state = false;
@@ -114,6 +114,7 @@ public abstract class BaseConfig {
 
 	/**
 	 * 配置的file
+	 * @return 文件
 	 */
 	public File getFile() {
 		return this.file;
@@ -121,6 +122,7 @@ public abstract class BaseConfig {
 
 	/**
 	 * 返回配置的config对象
+	 * @return 返回配置文件
 	 */
 	public FileConfiguration getConfig() {
 		return this.config;
@@ -134,7 +136,10 @@ public abstract class BaseConfig {
 			loadConfig();
 		}
 	}
-	
+
+	/**
+	 * 加载配置文件
+	 */
 	public abstract void loadConfig();
 
 	/**
@@ -171,6 +176,10 @@ public abstract class BaseConfig {
 		this.getConfig().set(key, val);
 	}
 
+	/**
+	 * 返回插件
+	 * @return 插件
+	 */
 	public BasePlugin getBasePlugin() {
 		return basePlugin;
 	}

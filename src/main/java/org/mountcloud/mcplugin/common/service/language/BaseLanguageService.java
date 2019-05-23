@@ -11,7 +11,11 @@ import org.mountcloud.mcplugin.common.config.BaseLanguageConfig;
 public class BaseLanguageService {
 	
 	protected BasePlugin basePlugin;
-	
+
+	/**
+	 * 构造函数
+	 * @param basePlugin 插件
+	 */
 	public BaseLanguageService(BasePlugin basePlugin) {
 		this.basePlugin = basePlugin;
 	}
@@ -19,8 +23,8 @@ public class BaseLanguageService {
 	/**
 	 * 返回字符串
 	 * @param str 需要替换的字符串
-	 * @param prms 
-	 * @return
+	 * @param prms 需要填充的字符串
+	 * @return 替换后的字符串
 	 */
 	public String getString(String str, String... prms) {
 		String tempString = str;

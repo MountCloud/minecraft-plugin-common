@@ -11,21 +11,25 @@ public class BaseLogService {
 	
 
 	protected BasePlugin basePlugin;
-	
+
+	/**
+	 * 构造函数
+	 * @param basePlugin 插件
+	 */
 	public BaseLogService(BasePlugin basePlugin) {
 		this.basePlugin = basePlugin;
 	}
 	
 	/**
 	 * 打印info日志
-	 * @param log
+	 * @param log 日志
 	 */
 	public void info(String log) {
 		this.basePlugin.getLogger().info(log);
 	}
 	/**
 	 * 打印warning日志
-	 * @param log
+	 * @param log 日志
 	 */
 	public void warning(String log) {
 		this.basePlugin.getLogger().warning(log);

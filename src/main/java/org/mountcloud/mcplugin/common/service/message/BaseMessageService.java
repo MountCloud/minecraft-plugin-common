@@ -13,7 +13,11 @@ import org.mountcloud.mcplugin.common.BasePlugin;
 public class BaseMessageService {
 	
 	protected BasePlugin basePlugin;
-	
+
+	/**
+	 * 构造函数
+	 * @param basePlugin 插件
+	 */
 	public BaseMessageService(BasePlugin basePlugin) {
 		this.basePlugin = basePlugin;
 	}

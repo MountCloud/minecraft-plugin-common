@@ -21,13 +21,17 @@ import org.mountcloud.mcplugin.common.service.BaseService;
  * TODO: 插件父类
  */
 public abstract class BasePlugin extends JavaPlugin {
-	
+
+	//日志服务
 	private BaseLogService baseLogService;
-	
+
+	//配置服务
 	private BaseConfigService baseConfigService;
-	
+
+	//国际化语言服务
 	private BaseLanguageService baseLanguageService;
-	
+
+	//消息服务
 	private BaseMessageService baseMessageService;
 
 	
@@ -55,14 +59,14 @@ public abstract class BasePlugin extends JavaPlugin {
 	}
 	
 	/**
-	 * 服务启用时
-	 * @return
+	 * 服务启用时调用
+	 * @return 是都启用
 	 */
 	public abstract boolean enable();
 	
 	/**
 	 * 提供基础命令用于注册命令执行者，如果不需要命令则只用返回null
-	 * @return
+	 * @return 返回默认的命令
 	 */
 	public String getDefaultCommand() {
 		return null;
@@ -128,6 +132,7 @@ public abstract class BasePlugin extends JavaPlugin {
 	/**
 	 * 注册命令执行者
 	 * @param commandServcie 命令执行服务
+	 * @param <T> 命令服务
 	 */
 	public<T extends BaseCommandeSercvice> void registerCommand(T commandServcie) {
 		getCommand(commandServcie.getExeCommand()).setExecutor(commandServcie);
@@ -136,22 +141,39 @@ public abstract class BasePlugin extends JavaPlugin {
 	/**
 	 * 注册事件监听器
 	 * @param listener 事件监听器
+	 * @param <T> 命令服务
 	 */
 	public <T extends BaseListener> void registerListener(T listener) {
 		getServer().getPluginManager().registerEvents(listener, this);
 	}
-	
+
+	/**
+	 * 注册服务
+	 * @param service 服务
+	 * @param <T> 服务
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public <T extends BaseService> void registerService(T service) {
 		Class serviceClass = service.getClass();
 		Bukkit.getServicesManager().register(serviceClass, service, this, org.bukkit.plugin.ServicePriority.Normal);
 	}
 
+	/**
+	 * 注册服务
+	 * @param cls 服务的类
+	 * @param service 服务
+	 * @param <T> 服务类型
+	 * @param <D> 服务类型
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public <T extends BaseService,D extends T> void registerService(Class<T> cls,D service) {
 		Bukkit.getServicesManager().register(cls, service, this, org.bukkit.plugin.ServicePriority.Normal);
 	}
 
+	/**
+	 * 返回日志服务
+	 * @return 日志服务
+	 */
 	public BaseLogService getBaseLogService() {
 		return baseLogService;
 	}
@@ -160,6 +182,10 @@ public abstract class BasePlugin extends JavaPlugin {
 		this.baseLogService = baseLogService;
 	}
 
+	/**
+	 * 返回配置服务
+	 * @return 配置服务
+	 */
 	public BaseConfigService getBaseConfigService() {
 		return baseConfigService;
 	}
@@ -168,6 +194,10 @@ public abstract class BasePlugin extends JavaPlugin {
 		this.baseConfigService = baseConfigService;
 	}
 
+	/**
+	 * 返回国际化语言服务
+	 * @return 语言服务
+	 */
 	public BaseLanguageService getBaseLanguageService() {
 		return baseLanguageService;
 	}
@@ -176,6 +206,10 @@ public abstract class BasePlugin extends JavaPlugin {
 		this.baseLanguageService = baseLanguageService;
 	}
 
+	/**
+	 * 返回消息服务
+	 * @return 消息服务
+	 */
 	public BaseMessageService getBaseMessageService() {
 		return baseMessageService;
 	}
