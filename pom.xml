@@ -5,6 +5,7 @@
     <groupId>org.mountcloud.mcplugin</groupId>
     <artifactId>mc-plugin-common</artifactId>
     <version>1.13-R0.1-SNAPSHOT-v1.0</version>
+    <description>this project is minecraft bukkit plugin common,Used for rapid development of server plugins.这个项目是我的世界bukkit插件common，用于我的世界bukkit服务器快速开发插件。</description>
     <packaging>jar</packaging>
 
     <!-- 声明license -->
