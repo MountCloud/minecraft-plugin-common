@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.mountcloud.mcplugin</groupId>
+    <groupId>org.mountcloud</groupId>
     <artifactId>mc-plugin-common</artifactId>
     <version>1.13-R0.1-SNAPSHOT-v1.0</version>
     <description>this project is minecraft bukkit plugin common,Used for rapid development of server plugins.这个项目是我的世界bukkit插件common，用于我的世界bukkit服务器快速开发插件。</description>
