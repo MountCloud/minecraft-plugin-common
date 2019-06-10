@@ -40,11 +40,14 @@ You need jdk1.8+ and maven.
 
 &nbsp;&nbsp;&nbsp;&nbsp;This project was originally designed to make myself look even cooler, because I have a survival server, but I hope that I have a cooler title in front of me, and everyone can buy the title through virtual currency, however I didn't find a plugin that met my needs online, so I wrote it myself.
 
-Title plugin GIT: [https://github.com/MountCloud/minecraft-plugin-prefix] (https://github.com/MountCloud/minecraft-plugin-prefix "https://github.com/MountCloud/minecraft- Plugin-prefix")
 
-Title Plugin API GIT: [https://github.com/MountCloud/minecraft-plugin-prefix-api](https://github.com/MountCloud/minecraft-plugin-prefix-api "https://github.com /MountCloud/minecraft-plugin-prefix-api")
+### You can refer to the following items for research and development.
 
-Title plugin store GIT: [https://github.com/MountCloud/minecraft-plugin-prefix-shop] (https://github.com/MountCloud/minecraft-plugin-prefix-shop "https://github.com /MountCloud/minecraft-plugin-prefix-shop")
+Prefix plugin GIT:[https://github.com/MountCloud/minecraft-plugin-prefix](https://github.com/MountCloud/minecraft-plugin-prefix "https://github.com/MountCloud/minecraft-plugin-prefix")
+
+Prefix Plugin API GIT: [https://github.com/MountCloud/minecraft-plugin-prefix-api](https://github.com/MountCloud/minecraft-plugin-prefix-api "https://github.com /MountCloud/minecraft-plugin-prefix-api")
+
+Prefix plugin shop GIT:[https://github.com/MountCloud/minecraft-plugin-prefix-shop](https://github.com/MountCloud/minecraft-plugin-prefix-shop "https://github.com/MountCloud/minecraft-plugin-prefix-shop")
 
 
 ## Play together
@@ -89,6 +92,8 @@ Title plugin store GIT: [https://github.com/MountCloud/minecraft-plugin-prefix-s
 ## 参考
 
 &nbsp;&nbsp;&nbsp;&nbsp;这个项目最初是为了满足我自己装波的想法，因为我有个生存服务器，但是我希望我前面有个更酷的称号，并且人人都可以通过虚拟币来购买称号，然而我再网上并没有找到满足我需求的插件，于是我就自己动手写了。
+
+### 可以参考以下项目进行研发
 
 称号插件GIT：[https://github.com/MountCloud/minecraft-plugin-prefix](https://github.com/MountCloud/minecraft-plugin-prefix "https://github.com/MountCloud/minecraft-plugin-prefix")
 
