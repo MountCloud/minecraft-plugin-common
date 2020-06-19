@@ -171,6 +171,29 @@ public abstract class BasePlugin extends JavaPlugin {
 	}
 
 	/**
+	 * 是否开启了线上模式，可以理解为是否开启了正版验证。
+	 * @return true 应用了正版，false 应用了盗版
+	 */
+	public boolean getOnlineState(){
+		return getServer().getOnlineMode();
+	}
+
+	/**
+	 * 返回用户的唯一号
+	 * @return 正版返回UUID，盗版返回用户名，所以盗版重名的话就没招了。
+	 */
+	public String getUserUniqueNumber(Player player){
+		String uniqueNumber = null;
+		if(getOnlineState()){
+			UUID uuid = player.getUniqueId();
+			uniqueNumber = uuid.toString();
+		}else{
+			uniqueNumber = player.getName();
+		}
+		return uniqueNumber;
+	}
+
+	/**
 	 * 返回日志服务
 	 * @return 日志服务
 	 */

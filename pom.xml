@@ -4,7 +4,7 @@
 
     <groupId>org.mountcloud</groupId>
     <artifactId>mc-plugin-common</artifactId>
-    <version>1.13.2-R0.1-SNAPSHOT-v1.0</version>
+    <version>1.15.2-R0.1-SNAPSHOT-v1.0</version>
     <description>this project is minecraft bukkit plugin common,Used for rapid development of server plugins.这个项目是我的世界bukkit插件common，用于我的世界bukkit服务器快速开发插件。</description>
     <packaging>jar</packaging>
 
@@ -39,7 +39,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <devServerPluginPath>E:/game/mc/server/devServer13/plugins</devServerPluginPath>
+        <devServerPluginPath>D:/</devServerPluginPath>
     </properties>
 
     <repositories>
@@ -62,14 +62,14 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.13.2-R0.1-SNAPSHOT</version>
+            <version>1.15.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <!--Bukkit API-->
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.13.2-R0.1-SNAPSHOT</version>
+            <version>1.15.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
